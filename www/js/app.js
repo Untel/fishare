@@ -57,12 +57,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.account', {
+      url: '/account',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-account': {
+          templateUrl: 'templates/tab-account.html',
+          controller: 'AccountCtrl'
         }
       }
     })
