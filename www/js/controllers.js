@@ -19,6 +19,18 @@ angular.module('starter.controllers', [])
       'comment' : 5
     },
     {
+      'id' : 4,
+      'prenom' : 'Decathlon',
+      'type' : 'Contenu Sponsorisé',
+      'img_user' : 'img/decathlon.jpg',
+      'img_photo' : 'img/leurres.jpg',
+      'prix' : '11.80',
+      'description' : 'LEURRE COULANT AUTAIN JMS 130S NATURALLY SKIN - 13CM - 27G',
+      'link' : 'https://lc.cx/JGGQ',
+      'link_title' : 'https://lc.cx/JGGQ',
+      'publicite' : true
+    },
+    {
       'id' : 2,
       'prenom' : 'Glenn',
       'nom' : 'Guegan',

@@ -5,21 +5,24 @@
       <div class="item item-avatar">
         <img src="{{data.img_user}}">
         <h2>{{data.prenom}} {{data.nom}}</h2>
-        <p>{{data.date}}</p>
+        <p ng-if="!data.publicite">{{data.date}}</p>
+        <p ng-if="data.publicite">{{data.type}}</p>
       </div>
 
       <div class="item item-body" style="display:inline-block; float:left;">
-        <div class="pts" style="font-weight:bold;">
+        <div class="pts" style="font-weight:bold;" ng-if="!data.publicite">
           <i class="ion-ribbon-b" style="color:gold;"></i> {{data.pts}} points
         </div>
         <img class="full-image" src="{{data.img_photo}}" style="display:inline-block;float:left;">
         <p>
-          <strong>Prise : {{data.type}} | Poids : {{data.poids}}kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
-          {{data.description}}
+          <strong ng-if="!data.publicite">Prise : {{data.type}} | Poids : {{data.poids}}kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
+          {{data.description}}<br />
+          <a href="{{data.link}}" target="_blank">{{data.link_title}}</a>
+          <button target="_blank" ng-if="data.publicite" style="background-color:#387ef5;color:#fff;border:none;float:right;border-radius:2px;"> <a href="{{data.link}}" style="color:#fff; text-decoration:none;" target="_blank"> <i class="ion-pricetag"></i> {{data.prix}}€</a></button>
         </p>
         <p>
-          <a href="#" class="subdued">{{data.like}} Like</a>
-          <a href="#" class="subdued">{{data.comment}} Comments</a>
+          <a href="#" ng-if="!data.publicite" class="subdued">{{data.like}} Like</a>
+          <a href="#" ng-if="!data.publicite" class="subdued">{{data.comment}} Comments</a>
         </p>
       </div>
     </div>
