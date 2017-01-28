@@ -90,6 +90,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PictureCtrl', function($scope, $state){
-  console.log('PictureCTRL loaded');
+  $scope.goTo = function(){
+    $state.go('board');
+  }
+})
+.controller('BoardCtrl', function($scope, $state){
+  console.log('BoardCtrl loaded');
 })
 ;
