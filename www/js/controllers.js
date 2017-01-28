@@ -25,4 +25,10 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+
+.controller('AuthCtrl', function($scope, $location){
+  $scope.submit = function(){
+    $location.path('/tab/dash');
+  }
+})
