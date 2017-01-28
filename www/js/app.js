@@ -33,17 +33,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // setup an abstract state for the tabs directive
     .state('auth', {
-    url: '/',
-    templateUrl: 'templates/auth.html',
-    controller: 'AuthCtrl'
-  })
+      url: '/',
+      templateUrl: 'templates/auth.html',
+      controller: 'AuthCtrl'
+    })
 
   // setup an abstract state for the tabs directive
     .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+    })
 
   // Each tab has its own nav history stack:
 
