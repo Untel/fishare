@@ -21,8 +21,10 @@
           <button target="_blank" ng-if="data.publicite" style="background-color:#387ef5;color:#fff;border:none;float:right;border-radius:2px;"> <a href="{{data.link}}" style="color:#fff; text-decoration:none;" target="_blank"> <i class="ion-pricetag"></i> {{data.prix}}€</a></button>
         </p>
         <p>
-          <a href="#" ng-if="!data.publicite" class="subdued">{{data.like}} Like</a>
+          <md-icon ng-if="!data.publicite" md-svg-icon="thumb-up"></md-icon>
+          <a href="#" ng-if="!data.publicite" class="subdued">{{data.like}} Likes</a>
           <a href="#" ng-if="!data.publicite" class="subdued">{{data.comment}} Comments</a>
+
         </p>
       </div>
     </div>
