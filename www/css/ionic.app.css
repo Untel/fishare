@@ -9815,6 +9815,12 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+md-input-container .md-input {
+  color: #fff !important; }
+
+md-input-container label {
+  color: #fff !important; }
+
 .bodyAuth video {
   position: absolute;
   top: 0px;
@@ -9824,6 +9830,13 @@ a.button {
   z-index: -100;
   background-size: cover;
   opacity: 1; }
+
+.bodyAuth .highlight {
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.7;
+  text-align: center; }
 
 .bodyAuth .authForm {
   top: 50%;

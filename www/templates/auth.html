@@ -1,11 +1,13 @@
-<ion-view class="bodyAuth" hide-nav-bar="true">
+<ion-view md-theme="fishareTheme" class="bodyAuth" hide-nav-bar="true">
 
   <video class="fade" id="bgvid" playsinline autoplay muted loop>
     <source src="../img/background.mp4" type="video/mp4">
   </video>
+  <div class="highlight">Yo</div>
 
   <ion-content class="padding">
-    <form class="authForm" method="post" ng-submit="submit()">
+
+    <form layout="column" class="authForm" method="post" ng-submit="submit()">
         <md-input-container>
           <label>Email</label>
           <input type="email">
@@ -14,7 +16,8 @@
           <label>Password</label>
           <input type="password">
         </md-input-container>
-        <!-- <md-button class="md-fab md-mini"></md-button> -->
+        <md-button class="md-primary">Connexion</md-button>
+        <md-button class="md-primary">Inscripton</md-button>
     </form>
   </ion-content>
 </ion-view>
