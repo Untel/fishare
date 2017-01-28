@@ -1,9 +1,12 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
+
+  $scope.showComment = -1;
+  $scope.error_message = undefined;
   $scope.datas = [
     {
-      'id' : 1,
+      'id' : 0,
       'prenom' : 'Clément',
       'nom' : 'Ignacio',
       'date' : '15 Janvier 2017',
@@ -16,10 +19,19 @@ angular.module('starter.controllers', [])
       'lieu' : 'Vannes',
       'description' : 'Journée incroyable ! Regardez ce magnifique poisson ;)',
       'like' : 1,
-      'comment' : 5
+      'comment' :  [
+        {
+          'id': 0,
+          'author_prenom' : "Glenn",
+          'author_nom' : "Guegan",
+          'author_img' : "img/glenn.jpg",
+          'content' : "Houa !! Belle prise !",
+          'heure' : 'Il y a 8 minutes'
+        }
+    ]
     },
     {
-      'id' : 2,
+      'id' : 1,
       'prenom' : 'Glenn',
       'nom' : 'Guegan',
       'date' : '14 Janvier 2017',
@@ -32,10 +44,12 @@ angular.module('starter.controllers', [])
       'lieu' : 'Brest',
       'description' : 'Pas mal, non ?',
       'like' : 4,
-      'comment' : 2
+      'comment' : [
+
+      ]
     },
     {
-      'id' : 4,
+      'id' : 2,
       'prenom' : 'Decathlon',
       'type' : 'Contenu Sponsorisé',
       'img_user' : 'img/decathlon.jpg',
@@ -51,7 +65,7 @@ angular.module('starter.controllers', [])
       'prenom' : 'Adrien',
       'nom' : 'Fernandes',
       'date' : '14 Janvier 2017',
-      'pts' : 'Over 9000',
+      'pts' : '25',
       'img_user' : 'img/adrien.jpg',
       'img_photo' : 'https://static.pratique.fr/images/unsized/pe/peche-maquereau.jpg',
       'type' : 'Maquereau',
@@ -59,10 +73,39 @@ angular.module('starter.controllers', [])
       'taille': 30,
       'lieu' : 'Cherbourg',
       'description' : 'Ma seule prise de la journée :/',
-      'like' : 'Over 9000',
-      'comment' : 'Over 9000'
+      'like' : 0,
+      'comment' : []
     }
   ];
+
+
+  $scope.toggleComments = function(id){
+    if($scope.showComment != id)
+      $scope.showComment = id;
+    else
+      $scope.showComment = -1;
+  }
+
+  $scope.validerComment = function(id, value){
+    console.log(id);
+    if(value == "" || value == undefined){
+      $scope.error_message = "Veuillez remplir tous les champs";
+    }
+    else{
+      $scope.error_message = undefined;
+      console.log($scope.datas[id]);
+      var tmp = {
+        'id' : $scope.datas[id].comment.length,
+        'author_prenom' : 'Clément',
+        'author_nom' : 'Ignacio',
+        'author_img' : 'img/clem.jpg',
+        'content' : value,
+        'heure' : new Date()
+      };
+      $scope.datas[id].comment.push(tmp);
+      $scope.toto = "";
+    }
+  }
 })
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
