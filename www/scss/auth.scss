@@ -1,3 +1,23 @@
-.test {
-  color: red;
+.bodyAuth {
+  video {
+    position: absolute;
+    top: 0px;
+    left: -670px;
+    height: 100%;
+    width: auto;
+    z-index: -100;
+    background-size: cover;
+    opacity: 1;
+    // animation: move 10s infnite;
+  }
+
+  .authForm {
+    top: 50%;
+    left: 50%;
+  }
+
+  // @keyframes move {
+  //   from { left: 0px;}
+  //   to { left: -700px;}
+  // }
 }
