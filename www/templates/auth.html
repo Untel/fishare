@@ -1,4 +1,4 @@
-<ion-view md-theme="fishareTheme" class="bodyAuth" hide-nav-bar="true">
+<ion-view class="bodyAuth" hide-nav-bar="true">
 
   <video class="fade" id="bgvid" playsinline autoplay muted loop>
     <source src="../img/background.mp4" type="video/mp4">
@@ -9,10 +9,11 @@
 
     <form layout="column" class="authForm" method="post" ng-submit="submit()">
 
+      <img src="../img/logo_blanc.png" alt="" height="180px">
       <div class="title">
-        FISHARE</br>
-        <span>fish & share</span>
+        <span>fish <span style="color: white">&</span> share</span>
       </div>
+    </br></br></br>
         <md-input-container>
           <label>Email</label>
           <input type="email">
@@ -23,6 +24,12 @@
         </md-input-container>
         <md-button ui-sref="tab.dash" class="md-primary">Connexion</md-button>
         <md-button class="md-primary">Inscripton</md-button>
+        <p>Connectez vous rapidement avec : </p>
+        <div layout="row" class="">
+          <div class="new-fb-btn new-fb-6 new-fb-default-anim"><div class="new-fb-6-1"><div class="new-fb-6-1-1">Facebook</div></div></div>
+          <md-button class="md-primary">Inscripton</md-button>
+        </div>
+
     </form>
   </ion-content>
 </ion-view>

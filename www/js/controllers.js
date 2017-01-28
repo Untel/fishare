@@ -39,7 +39,7 @@ angular.module('starter.controllers', [])
       'prenom' : 'Adrien',
       'nom' : 'Fernandes',
       'date' : '14 Janvier 2017',
-      'pts' : 20,
+      'pts' : 'Over 9000',
       'img_user' : 'img/adrien.jpg',
       'img_photo' : 'https://static.pratique.fr/images/unsized/pe/peche-maquereau.jpg',
       'type' : 'Maquereau',
@@ -47,31 +47,11 @@ angular.module('starter.controllers', [])
       'taille': 30,
       'lieu' : 'Cherbourg',
       'description' : 'Ma seule prise de la journée :/',
-      'like' : 0,
-      'comment' : 0
+      'like' : 'Over 9000',
+      'comment' : 'Over 9000'
     }
   ];
 })
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

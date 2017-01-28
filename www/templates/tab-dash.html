@@ -14,11 +14,12 @@
         </div>
         <img class="full-image" src="{{data.img_photo}}" style="display:inline-block;float:left;">
         <p>
-          <strong>Prise : {{data.type}} | Poids : {{data.poids}}kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
+          <strong>Prise : {{data.type}} | Poids : {{data.poids}} kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
           {{data.description}}
         </p>
         <p>
-          <a href="#" class="subdued">{{data.like}} Like</a>
+          <md-icon md-svg-icon="thumb-up"></md-icon>
+          <a href="#" class="subdued">{{data.like}} Likes</a>
           <a href="#" class="subdued">{{data.comment}} Comments</a>
         </p>
       </div>
