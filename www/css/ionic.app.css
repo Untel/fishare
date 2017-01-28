@@ -9821,6 +9821,12 @@ md-input-container .md-input {
 md-input-container label {
   color: #fff !important; }
 
+.bodyAuth .title {
+  color: white;
+  font-size: 75px;
+  top: 100px;
+  left: 50%; }
+
 .bodyAuth video {
   position: absolute;
   top: 0px;

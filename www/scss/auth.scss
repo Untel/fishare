@@ -4,11 +4,19 @@ md-input-container {
   }
 
   label {
-    color: #fff !important;
+    color: rgb(0, 188, 212) !important;
   }
 }
 
 .bodyAuth {
+
+  .title {
+    color: white;
+    font-size: 75px;
+    top: 100px;
+    left: 50%
+  }
+
   video {
     position: absolute;
     top: 0px;

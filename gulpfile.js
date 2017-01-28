@@ -11,7 +11,7 @@ var paths = {
   sass: ['./scss/*.scss']
 };
 
-gulp.task('default', ['sass','watch','serve']);
+gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -23,7 +23,8 @@ gulp.task('sass', function(done) {
     }))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
-    .pipe(livereload());
+    .on('end', done);
+
 });
 
 gulp.task('watch', ['sass'], function() {

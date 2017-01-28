@@ -3,11 +3,15 @@
   <video class="fade" id="bgvid" playsinline autoplay muted loop>
     <source src="../img/background.mp4" type="video/mp4">
   </video>
-  <div class="highlight">Yo</div>
+  <div class="highlight"></div>
 
   <ion-content class="padding">
 
     <form layout="column" class="authForm" method="post" ng-submit="submit()">
+
+      <div class="title">
+        Fishare
+      </div>
         <md-input-container>
           <label>Email</label>
           <input type="email">
@@ -16,7 +20,7 @@
           <label>Password</label>
           <input type="password">
         </md-input-container>
-        <md-button class="md-primary">Connexion</md-button>
+        <md-button ui-sref="tab.dash" class="md-primary">Connexion</md-button>
         <md-button class="md-primary">Inscripton</md-button>
     </form>
   </ion-content>
