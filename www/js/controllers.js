@@ -88,3 +88,8 @@ angular.module('starter.controllers', [])
     console.log($scope.user);
   }
 })
+
+.controller('PictureCtrl', function($scope, $state){
+  console.log('PictureCTRL loaded');
+})
+;

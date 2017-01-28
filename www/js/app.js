@@ -84,7 +84,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+  .state('tab.picture', {
+    url: '/picture',
+    views: {
+      'tab-account': {
+        templateUrl: 'templates/picture.html',
+        controller: 'PictureCtrl'
+      }
+    }
+  })
+  ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
