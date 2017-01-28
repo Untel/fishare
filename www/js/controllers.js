@@ -85,6 +85,7 @@ angular.module('starter.controllers', [])
   $scope.goTo = function(){
     $state.go('board');
   }
+  console.log("Loaded");
 })
 .controller('BoardCtrl', function($scope, $state){
   console.log('BoardCtrl loaded');

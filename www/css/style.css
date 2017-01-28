@@ -2,15 +2,74 @@
 
 .bodyAuth .title {
   color: white;
-  font-size: 80px;
+  font-size: 40px;
   width: 100%;
   text-align: center;
   font-family: "fish";
+  color: rgb(0, 188, 212);
+  margin-top: 25px;
+}
+
+.fakePicture {
+  position: absolute;
+  top: -50px;
+  left: -20px;
+
+  /*height: 670px;
+  width: 390px;*/
+  top: 20px;
+  height: 100%;
+  width: auto;
+  left: -60%;
+  z-index: -10;
+
+  transform: rotate(-90deg);
+}
+
+.camera {
+  height: 560px;
+  width: 355px;
+}
+
+.camera_flash_effect {
+  /*width: 120%;
+  height: 120%;*/
+  background: white;
+  animation-name: flash;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.goBtn {
+  position: absolute;
+  /*left: -100px;*/
+  top: -70px;
+  /*animation: move 2s;
+  animation-iteration-count: 1;*/
+  /*transform: translateX(275px);*/
+  animation: move 2s;
+  -webkit-animation-fill-mode: forwards;
+}
+@keyframes move {
+  from {
+    left: -70px;
+  }
+  to {
+    left: 275px;
+  }
 }
 
 .title span {
-  font-size: 40px;
-  color: rgb(0, 188, 212)
+  color: white;
 }
 
 .pictureCtrl {
