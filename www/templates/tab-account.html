@@ -1,9 +1,28 @@
-<ion-view view-title="Account">
+<ion-view view-title="Carnet de bord">
+<style>
+#nbPoissons{
+   transform: scaleX(-1);
+   margin-left:10%;
+}
+.score{
+  font-size:90px;
+  float:right;
+  margin-top:50px;
+  color:#fff;
+  margin-right:10%;
+}
+
+.slash{
+  margin-top:35px;
+  font-size:25px;
+}
+</style>
   <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+    <div class="card">
+  <div class="item item-text-wrap" style="background-color:#387ef5;">
+    <img src="img/fish.png" alt="" id="nbPoissons">
+    <div class="score">25 <div class="slash">/ mois</div></div>
+  </div>
+</div>
   </ion-content>
 </ion-view>

@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
     {
       'id' : 3,
       'prenom' : 'Adrien',
-      'nom' : 'Fernandez',
+      'nom' : 'Fernandes',
       'date' : '14 Janvier 2017',
       'pts' : 20,
       'img_user' : 'img/adrien.jpg',
