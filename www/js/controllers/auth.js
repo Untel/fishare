@@ -1,7 +1,12 @@
 angular.module('starter.controllers', [])
 
-.controller('AuthCtrl', function($scope, $location){
-  // $scope.submit = function(){
-  //   $location.path('/tab/dash');
-  // }
-})
+// .controller('AuthCtrl', ['$scope', '$state',function($scope, $state){
+//   $scope.user = {
+//     email: null,
+//     password: null
+//   };
+//   $scope.submit = function(){
+//     $state.go('tab.dash');
+//     console.log($scope.user);
+//   }
+// }])
