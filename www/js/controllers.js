@@ -145,7 +145,7 @@ angular.module('starter.controllers', [])
 
   $scope.showModal = function(event){
     console.log($scope.data);
-    if($scope.data.taille <= 20 ){
+    if(!$scope.data.taille && $scope.data.poids && $scope.data.taille <= 20 ){
       var confirm = $mdDialog.confirm()
       .title("Réglementation")
       .textContent("La taille de ce poisson n'est pas en accord avec la réglementation")
