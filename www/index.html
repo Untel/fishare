@@ -48,10 +48,15 @@
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
+    <ion-side-menus>
+    	<!-- Main content -->
+    	<ion-side-menu-content>
+    	</ion-side-menu-content>
+
+    	<!-- Left Side Menu -->
+    	<ion-side-menu expose-aside-when="large">
+    	</ion-side-menu>
+    </ion-side-menus>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
