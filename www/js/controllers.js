@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $http) {
   $scope.showComment = -1;
   $scope.error_message = undefined;
-  scope.datas = [];
+  $scope.datas = [];
 
 
   $scope.datas = [];
