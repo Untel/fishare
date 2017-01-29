@@ -1,5 +1,5 @@
 angular.module('starter.services', [])
-.factory("JsonServ", function($http){
+.factory('JsonServ', function($http){
   console.log('enter');
   var getData = function () {
     return $http({
@@ -9,21 +9,7 @@ angular.module('starter.services', [])
       console.log(res);
       return res.data;
     });
-  }
+  };
 
-  // var getLaw = function () {
-  //   return $http({
-  //     method: 'GET',
-  //     url: '../../reglement.json'
-  //   }).then(function(res){
-  //     return res.data;
-  //   });
-  // }
-
-  console.log( getData());
-
-  return {
-    getData : getData()
-  }
-
+  return { getData: getData };
 });
