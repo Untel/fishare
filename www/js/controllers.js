@@ -39,6 +39,7 @@ angular.module('starter.controllers', [])
     url: '../../data.json'
   }).then(function(res){
     $scope.datas = res.data;
+    $rootScope.datas = $scope.datas;
   });
 
   $scope.toggleComments = function(id){
