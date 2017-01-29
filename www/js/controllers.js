@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $http) {
+.controller('DashCtrl', function($scope, $http, $rootScope) {
   $scope.showComment = -1;
   $scope.error_message = undefined;
   $scope.datas = [];
@@ -10,6 +10,7 @@ angular.module('starter.controllers', [])
       url: '../../data.json'
     }).then(function(res){
       $scope.datas = res.data;
+      $rootScope.datas = $scope.datas;
     });
 
   $scope.toggleComments = function(id){
@@ -82,25 +83,28 @@ angular.module('starter.controllers', [])
     // $location.path('/board');
     $state.go('board');
   }
-  console.log("Loaded");
 })
 .controller('PriseCtrl', function($scope, $state,$location){
   console.log("d");
 })
 .controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast){
   $scope.data = {
-    'id' : 1,
-    'prenom' : 'Jean Eude',
-    'nom' : 'Pepou',
-    'description' : 'Journée incroyable ! Regardez ce magnifique poisson ;)',
-    'date' : '15 Octobre 2017',
-    'img_photo' : 'img/peche1.jpg',
-    'type' : 'Maquereau'
+    "prenom" : "Jack",
+    "nom" : "Dupont",
+    "description" : "Journée incroyable ! Regardez ce magnifique poisson ;)",
+    "date" : "15 Octobre 2017",
+    "img_photo" : "img/peche1.jpg",
+    "img_user": "img/jack.gif",
+    "type" : "Maquereau",
+    "lieu": "Brennilis",
+    "like": 0,
+    "comment": []
   }
-
-  $scope.showModal = function(event){
-    console.log($scope.data);
-    if(!$scope.data.taille && $scope.data.poids && $scope.data.taille <= 20 ){
+  data = $scope.data;
+  $scope.showModal = function(event, value){
+    var id;
+    $scope.datas = [];
+    if((!value.poids && !value.taille) || value.taille < 20){
       var confirm = $mdDialog.confirm()
       .title("Réglementation")
       .textContent("La taille de ce poisson n'est pas en accord avec la réglementation")
@@ -110,13 +114,27 @@ angular.module('starter.controllers', [])
       $mdDialog.show(confirm)
     }
     else{
-      $mdToast.show(
-        $mdToast.simple()
+      $http({
+        method: 'GET',
+        url: '../../data.json'
+      }).then(function(res){
+        $scope.datas = res.data;
+        id = $scope.datas[$scope.datas.length - 1].id;
+        data["id"] = id++;
+        data["taille"] = parseInt(value.taille);
+        data["poids"] = parseInt(value.poids);
+        $rootScope.datas.push(data);
+
+        $mdToast.show(
+          $mdToast.simple()
           .textContent("Votre poisson à bien été ajouté")
           .position("bottom")
           .hideDelay(3000)
-      );
-      $state.go('tab.dash');
+        );
+        $state.go('tab.dash');
+      });
+
+
     }
   }
 })
