@@ -9815,10 +9815,10 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-md-input-container .md-input {
+.bodyAuth md-input-container .md-input {
   color: #fff !important; }
 
-md-input-container label {
+.bodyAuth md-input-container label {
   color: #00bcd4 !important; }
 
 .bodyAuth video {

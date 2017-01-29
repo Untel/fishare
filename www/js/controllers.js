@@ -107,6 +107,7 @@ angular.module('starter.controllers', [])
     }
   }
 })
+
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
@@ -124,13 +125,40 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('PictureCtrl', function($scope, $state){
+.controller('PictureCtrl', function($scope, $state,$location){
   $scope.goTo = function(){
+    // $location.path('/board');
     $state.go('board');
   }
   console.log("Loaded");
 })
-.controller('BoardCtrl', function($scope, $state){
-  console.log('BoardCtrl loaded');
+.controller('BoardCtrl', function($scope, $state, $mdDialog){
+  $scope.showToolTip = false;
+  $scope.data = {
+    'id' : 1,
+    'prenom' : 'Jean Eude',
+    'nom' : 'Pepou',
+    'description' : 'Journée incroyable ! Regardez ce magnifique poisson ;)',
+    'date' : '15 Octobre 2017',
+    'img_photo' : 'img/peche1.jpg',
+    'type' : 'Maquereau'
+  }
+
+  $scope.showModal = function(event){
+    console.log($scope.data);
+    $scope.showToolTip = false;
+    if(!$scope.data.taille && !$scope.data.poids && $scope.data.taille <= 20 ){
+      var confirm = $mdDialog.confirm()
+      .title("Réglementation")
+      .textContent("La taille de ce poisson n'est pas en accord avec la réglementation")
+      .targetEvent(event)
+      .ok('Relacher')
+      .cancel("réglementation");
+      $mdDialog.show(confirm)
+    }
+    else{
+      $scope.showToolTip = false;
+    }
+  }
 })
 ;
