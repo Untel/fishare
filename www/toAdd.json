@@ -4,10 +4,14 @@
     "prenom" : "Max",
     "nom" : "Himome",
     "date" : "Il y a 2 minutes",
-    "pts" : 2,
+    "pts" : 140,
     "img_user" : "img/max.png",
-    "lieu" : "Brest",
-    "description" : "Quelqu'un est chaud pour une petite sortie en mer ? :)",
+    "img_photo" : "img/thon.jpg",
+    "type" : "Thon",
+    "poids" : 60,
+    "taille" : 100,
+    "lieu" : "Marseille",
+    "description" : "Première sortie de l'année en méditéranée",
     "like" : 0,
     "comment" : []
   }
