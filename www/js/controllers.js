@@ -3,9 +3,13 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', ['JsonServ', function($scope, $http, JsonServ) {
   $scope.showComment = -1;
   $scope.error_message = undefined;
+  scope.datas = [];
 
-  JsonServ.getData().then(function(res){
-  });
+  var init = function(){
+    JsonServ.getData().then(function(res){
+      $scope.datas = res.data;
+    });
+  }
 
   $scope.toggleComments = function(id){
     if($scope.showComment != id)
@@ -24,9 +28,9 @@ angular.module('starter.controllers', [])
       console.log($scope.datas[id]);
       var tmp = {
         'id' : $scope.datas[id].comment.length,
-        'author_prenom' : 'Clément',
-        'author_nom' : 'Ignacio',
-        'author_img' : 'img/clem.jpg',
+        'author_prenom' : 'Jack',
+        'author_nom' : 'Dupont',
+        'author_img' : 'img/jack.jpg',
         'content' : value,
         'heure' : new Date()
       };
@@ -34,6 +38,8 @@ angular.module('starter.controllers', [])
       $scope.toto = "";
     }
   }
+  
+  init();
 }])
 
 .controller('AccountCtrl', function($scope) {

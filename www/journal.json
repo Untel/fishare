@@ -1,0 +1,29 @@
+[
+  {
+    "nbMois" : "25",
+    "principaux" : [
+      {
+        "id" : 0,
+        "type" : "Brochets",
+        "nb" : "16"
+      },
+      {
+        "id" : 1,
+        "type" : "Bars",
+        "nb" : "6"
+      },
+      {
+        "id" : 2,
+        "type" : "Vieilles",
+        "nb" : "3"
+      },
+
+    ],
+    "prises" : [
+      {
+        "id" : 0,
+        "type" :
+      }
+    ]
+  }
+]
