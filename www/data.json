@@ -37,9 +37,7 @@
     "lieu" : "Brest",
     "description" : "Pas mal, non ?",
     "like" : 4,
-    "comment" : [
-
-    ]
+    "comment" : []
   },
   {
     "id" : 2,
@@ -83,8 +81,6 @@
     "lieu" : "Brest",
     "description" : "Pas mal, non ?",
     "like" : 4,
-    "comment" : [
-
-    ]
-  },
+    "comment" : []
+  }
 ]
