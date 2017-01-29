@@ -5,7 +5,7 @@
       refreshing-text="{{timeFromLast}}"
       on-refresh="doRefresh()">
     </ion-refresher>
-    <div class="list card" ng-repeat="data in datas">
+    <div class="list card" ng-repeat="(index,data) in datas">
 
       <div class="item item-avatar">
         <img ng-src="{{data.img_user}}">
@@ -38,7 +38,7 @@
               </a>
             </div>
           </div>
-          <form ng-show="showComment == data.id" ng-submit="validerComment(data.id, toto)">
+          <form ng-show="showComment == data.id" ng-submit="validerComment(data.id, toto, index)">
             <label style="color: red" class="item item-input" ng-if="error_message != undefined">{{error_message}}</label><br />
               <div class="row">
                 <div class="col">

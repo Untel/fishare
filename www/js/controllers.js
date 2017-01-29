@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
       }).then(function(res){
         console.log('found', res);
         $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
-        $scope.datas = $rootScope.datas
+        $scope.datas = $rootScope.datas;
         $scope.datas.unshift(res.data[0]);
         $scope.$broadcast('scroll.refreshComplete');
         return;
@@ -51,18 +51,17 @@ angular.module('starter.controllers', [])
       $scope.showComment = -1;
   }
 
-  $scope.validerComment = function(id, value){
+  $scope.validerComment = function(id, value, index){
     console.log(id);
     if(value == "" || value == undefined){
       $scope.error_message = "Veuillez remplir tous les champs";
     }
     else{
       $scope.error_message = undefined;
-      console.log($scope.datas[id]);
       var id_comment = 0;
-      console.log($scope.datas[id]);
-      if($scope.datas[id].comment.length){
-        id_comment = $scope.datas[id].comment.length;
+
+      if($scope.datas[index].comment.length){
+        id_comment = $scope.datas[index].comment.length;
       }
       var tmp = {
         'id' : id_comment,
@@ -72,7 +71,7 @@ angular.module('starter.controllers', [])
         'content' : value,
         'heure' : new Date()
       };
-      $scope.datas[id].comment.push(tmp);
+      $scope.datas[index].comment.push(tmp);
       // $scope.datas[id].comment.push(tmp);
       $scope.toto = "";
     }
@@ -157,7 +156,7 @@ angular.module('starter.controllers', [])
       }).then(function(res){
         $scope.datas = res.data;
         $rootScope.datas = $scope.datas;
-        id = $scope.datas[$scope.datas.length - 1].id;
+        id = $scope.datas[$scope.datas.length-1].id;
         data["id"] = id++;
         data["taille"] = parseInt(value.taille);
         data["poids"] = parseInt(value.poids);
