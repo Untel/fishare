@@ -58,16 +58,16 @@ angular.module('starter.controllers', [])
     }
     else{
       $scope.error_message = undefined;
-      console.log($scope.datas[id]);
+      console.log($rootScope.datas[id]);
       var tmp = {
-        'id' : $scope.datas[id].comment.length,
+        'id' : $rootScope.datas[id].comment.length,
         'author_prenom' : 'Jack',
         'author_nom' : 'Dupont',
         'author_img' : 'img/jack.jpg',
         'content' : value,
         'heure' : new Date()
       };
-      $scope.datas[id].comment.push(tmp);
+      $rootScope.datas[id].comment.push(tmp);
       $scope.toto = "";
     }
   }
