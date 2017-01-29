@@ -10,6 +10,7 @@
   margin-top: 25px;
 }
 
+
 .fakePicture {
   position: absolute;
   top: -50px;
@@ -68,7 +69,23 @@
   }
 }
 
-.title span {
+.logo {
+  width: 100%;
+}
+.logo img {
+  left: 50%;
+  height: auto;
+  width: 100%;
+  max-width: 400px;
+  max-height: 180px;
+  text-align: center;
+}
+
+.subtitle {
+  margin-top: 20px;
+}
+
+.subtitle span {
   color: white;
 }
 

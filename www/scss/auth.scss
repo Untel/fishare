@@ -22,7 +22,10 @@
   video {
     position: absolute;
     top: 0px;
-    left: -670px;
+    left: 0px;
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
     height: 100%;
     width: auto;
     z-index: -100;
