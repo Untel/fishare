@@ -66,9 +66,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
     .state('tab.prise', {
       url: '/prise/:id',
-      templateUrl: 'templates/prise.html',
-      controller: 'PriseCtrl',
-      parent: "tab.account"
+      views: {
+        'tab-prise': {
+          templateUrl: 'templates/prise.html',
+          controller: 'PriseCtrl'
+        }
+      }
     })
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
