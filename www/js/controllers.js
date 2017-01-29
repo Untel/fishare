@@ -5,8 +5,6 @@ angular.module('starter.controllers', [])
   $scope.error_message = undefined;
   $scope.datas = [];
 
-
-  $scope.datas = [];
     $http({
       method: 'GET',
       url: '../../data.json'
@@ -43,10 +41,25 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $http) {
   $scope.settings = {
     enableFriends: true
   };
+  $scope.nbMois;
+  $scope.principaux = [];
+  $scope.prises = [];
+
+  $http({
+    method: 'GET',
+    url: '../../journal.json'
+  }).then(function(res){
+    console.log(res);
+    $scope.nbMois = res.data.nbMois;
+    $scope.principaux = res.data.principaux;
+    $scope.prises = res.data.prises;
+  });
+
+
 })
 
 .controller('AuthCtrl', function($scope, $state){

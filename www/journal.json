@@ -1,29 +1,46 @@
-[
+
   {
     "nbMois" : "25",
     "principaux" : [
       {
         "id" : 0,
         "type" : "Brochets",
-        "nb" : "16"
+        "nb" : "16",
+        "color" : "#28a54c"
       },
       {
         "id" : 1,
         "type" : "Bars",
-        "nb" : "6"
+        "nb" : "6",
+        "color" : "#e6b500"
       },
       {
         "id" : 2,
         "type" : "Vieilles",
-        "nb" : "3"
-      },
-
+        "nb" : "3",
+        "color" : "#e42112"
+      }
     ],
     "prises" : [
       {
         "id" : 0,
-        "type" :
+        "img" : "peche_jack.gif",
+        "date" : "14 Janvier 2017",
+        "pts" : 520,
+        "type" : "Brochet",
+        "poids" : 37,
+        "taille": 123,
+        "lieu" : "Lac de Brennilis"
+      },
+      {
+        "id" : 1,
+        "img" : "peche_jack2.jpg",
+        "date" : "10 Janvier 2017",
+        "pts" : 520,
+        "type" : "Brochet",
+        "poids" : 34,
+        "taille": 129,
+        "lieu" : "Lac de Guerledan"
       }
     ]
   }
-]
