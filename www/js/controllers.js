@@ -22,6 +22,7 @@ angular.module('starter.controllers', [])
       }).then(function(res){
         console.log('found', res);
         $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
+        $scope.datas = $rootScope.datas
         $scope.datas.unshift(res.data[0]);
         $scope.$broadcast('scroll.refreshComplete');
         return;
@@ -33,8 +34,6 @@ angular.module('starter.controllers', [])
     doRefresh();
   }
 
-
-
   $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
 
   $scope.datas = [];
@@ -43,7 +42,6 @@ angular.module('starter.controllers', [])
     url: '../../data.json'
   }).then(function(res){
     $scope.datas = res.data;
-    $rootScope.datas = $scope.datas;
   });
 
   $scope.toggleComments = function(id){
@@ -60,16 +58,22 @@ angular.module('starter.controllers', [])
     }
     else{
       $scope.error_message = undefined;
-      console.log($rootScope.datas[id]);
+      console.log($scope.datas[id]);
+      var id_comment = 0;
+      console.log($scope.datas[id]);
+      if($scope.datas[id].comment.length){
+        id_comment = $scope.datas[id].comment.length;
+      }
       var tmp = {
-        'id' : $rootScope.datas[id].comment.length,
+        'id' : id_comment,
         'author_prenom' : 'Jack',
         'author_nom' : 'Dupont',
         'author_img' : 'img/jack.jpg',
         'content' : value,
         'heure' : new Date()
       };
-      $rootScope.datas[id].comment.push(tmp);
+      $scope.datas[id].comment.push(tmp);
+      // $scope.datas[id].comment.push(tmp);
       $scope.toto = "";
     }
   }
@@ -119,7 +123,7 @@ angular.module('starter.controllers', [])
 .controller('PriseCtrl', function($scope, $state,$location){
   console.log("d");
 })
-.controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast, $http, $rootScope){
+.controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast, $http, $rootScope, $location){
   $scope.data = {
     "prenom" : "Jack",
     "nom" : "Dupont",
@@ -152,6 +156,7 @@ angular.module('starter.controllers', [])
         url: '../../data.json'
       }).then(function(res){
         $scope.datas = res.data;
+        $rootScope.datas = $scope.datas;
         id = $scope.datas[$scope.datas.length - 1].id;
         data["id"] = id++;
         data["taille"] = parseInt(value.taille);
@@ -165,6 +170,7 @@ angular.module('starter.controllers', [])
           .position("bottom")
           .hideDelay(3000)
         );
+        $state.reload();
         $state.go('tab.dash');
       });
 
