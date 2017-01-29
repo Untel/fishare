@@ -23,7 +23,9 @@ angular.module('starter.controllers', [])
         console.log('found', res);
         $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
         $scope.datas.unshift(res.data[0]);
+        $scope.$broadcast('scroll.refreshComplete');
         return;
+
       });
     }, 3000);
   }
