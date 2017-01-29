@@ -157,10 +157,11 @@ angular.module('starter.controllers', [])
     else{
       $mdToast.show(
         $mdToast.simple()
-          .textContent("You Winn FDP !!")
+          .textContent("Votre poisson à bien été ajouté")
           .position("bottom")
-          .hideDelay(8000)
+          .hideDelay(3000)
       );
+      $state.go('tab.dash');
     }
   }
 })
