@@ -3,7 +3,7 @@
     <div class="list card" ng-repeat="data in datas">
 
       <div class="item item-avatar">
-        <img src="{{data.img_user}}">
+        <img ng-src="{{data.img_user}}">
         <h2>{{data.prenom}} {{data.nom}}</h2>
         <p ng-if="!data.publicite">{{data.date}}</p>
         <p ng-if="data.publicite">{{data.type}}</p>
@@ -13,7 +13,7 @@
         <div class="pts" style="font-weight:bold;" ng-if="!data.publicite">
           <i class="ion-ribbon-b" style="color:gold;"></i> {{data.pts}} points
         </div>
-        <img class="full-image" src="{{data.img_photo}}" style="display:inline-block;float:left;">
+        <img class="full-image" ng-src="{{data.img_photo}}" style="display:inline-block;float:left;">
         <p>
           <strong ng-if="!data.publicite">Prise : {{data.type}} | Poids : {{data.poids}}kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
           {{data.description}}<br />
@@ -21,10 +21,34 @@
           <button target="_blank" ng-if="data.publicite" style="background-color:#387ef5;color:#fff;border:none;float:right;border-radius:2px;"> <a href="{{data.link}}" style="color:#fff; text-decoration:none;" target="_blank"> <i class="ion-pricetag"></i> {{data.prix}}€</a></button>
         </p>
         <p>
-          <a href="#" ng-if="!data.publicite" class="subdued">{{data.like}} Likes</a>
-          <a href="#" ng-if="!data.publicite" class="subdued">{{data.comment}} Comments</a>
-
           <md-icon ng-if="!data.publicite" md-svg-icon="thumb-up"></md-icon>
+          <a href="" ng-if="!data.publicite" class="subdued">{{data.like}} <i class="ion-thumbsup"></i> </a>
+          <a ng-if="!data.publicite" ng-click="toggleComments(data.id)" class="subdued">{{data.comment.length}} <i class="ion-chatboxes"></i></a>
+          <div ng-show="showComment == data.id">
+            <div class="list" ng-repeat="comment in data.comment track by $index">
+              <a class="item item-avatar" href="">
+                <img ng-src="{{comment.author_img}}">
+                <h2>{{comment.author_prenom}} {{comment.author_nom}}</h2>
+                <p>{{comment.content}}</p>
+              </a>
+            </div>
+          </div>
+          <form ng-show="showComment == data.id" ng-submit="validerComment(data.id, toto)">
+            <label class="item item-input" ng-if="error_message != undefined">{{error_message}}</label><br />
+              <div class="row">
+                <div class="col">
+                  <label class="item item-input">
+                    <input type="text" placeholder="Message" ng-model="toto">
+                  </label>
+                </div>
+                <div class="col">
+                  <label class="item item-input">
+                    <md-button class="md-primary" style="background-color:#387ef5; border:none;color:#fff;" type="submit">Répondre</md-button>
+                  </label>
+                </div>
+              </div>
+          </form>
+
         </p>
       </div>
     </div>
