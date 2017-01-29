@@ -3,7 +3,7 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $http, $rootScope) {
   $scope.showComment = -1;
   $scope.error_message = undefined;
-
+  $scope.datas = [];
   var getDate = function(time){
     var hh = time.getHours();
     var mn = Math.round(time.getMinutes());
@@ -22,7 +22,8 @@ angular.module('starter.controllers', [])
       }).then(function(res){
         console.log('found', res);
         $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
-        $scope.datas = $rootScope.datas;
+        if($rootScope.hasOwnProperty("datas"))
+          $scope.datas = $rootScope.datas;
         $scope.datas.unshift(res.data[0]);
         $scope.$broadcast('scroll.refreshComplete');
         return;
@@ -36,7 +37,6 @@ angular.module('starter.controllers', [])
 
   $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
 
-  $scope.datas = [];
   $http({
     method: 'GET',
     url: '../../data.json'
