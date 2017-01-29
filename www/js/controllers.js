@@ -3,15 +3,43 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $http, $rootScope) {
   $scope.showComment = -1;
   $scope.error_message = undefined;
-  $scope.datas = [];
 
-    $http({
-      method: 'GET',
-      url: '../../data.json'
-    }).then(function(res){
-      $scope.datas = res.data;
-      $rootScope.datas = $scope.datas;
-    });
+  var getDate = function(time){
+    var hh = time.getHours();
+    var mn = Math.round(time.getMinutes());
+    var ss = time.getSeconds();
+    var dd = time.getDate();
+    var mm = time.getMonth() + 1;
+    return dd + '/' + mm + ' à ' + hh + ':' + mn + ':' + ss;
+  }
+
+  var doRefresh = function(){
+    setTimeout(function(){
+      console.log('Refreshing');
+      $http({
+        method: 'GET',
+        url: '../../toAdd.json'
+      }).then(function(res){
+        console.log('found', res);
+        $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
+        $scope.datas.unshift(res.data[0]);
+        return;
+      });
+    }, 3000);
+  }
+  $scope.doRefresh = doRefresh;
+
+
+
+  $scope.timeFromLast = 'Actualisé le ' + getDate(new Date());
+
+  $scope.datas = [];
+  $http({
+    method: 'GET',
+    url: '../../data.json'
+  }).then(function(res){
+    $scope.datas = res.data;
+  });
 
   $scope.toggleComments = function(id){
     if($scope.showComment != id)

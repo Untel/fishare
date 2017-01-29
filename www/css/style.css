@@ -101,3 +101,11 @@
     font-family: "fish";
     src: url("fonts/fish.ttf") format("truetype");
 }
+
+.actu {
+  left: -50px !important;
+  font-size: 7px !important;
+}
+.actu b {
+  color: rgb(0, 188, 212);
+}

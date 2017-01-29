@@ -1,5 +1,9 @@
-<ion-view view-title="Tableau de bord">
+<ion-view hide-back-button="false">
   <ion-content class="padding">
+    <ion-refresher
+      pulling-text="{{timeFromLast}}"
+      on-refresh="doRefresh()">
+    </ion-refresher>
     <div class="list card" ng-repeat="data in datas">
 
       <div class="item item-avatar">
@@ -15,7 +19,7 @@
         </div>
         <img class="full-image" ng-src="{{data.img_photo}}" style="display:inline-block;float:left;">
         <p>
-          <strong ng-if="!data.publicite">Prise : {{data.type}} | Poids : {{data.poids}}kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
+          <strong ng-if="!data.publicite && data.type">Prise : {{data.type}} | Poids : {{data.poids}}kilos | Taille : {{data.taille}}cm | Autour de {{data.lieu}}</strong><br />
           {{data.description}}<br />
           <a href="{{data.link}}" target="_blank">{{data.link_title}}</a>
           <button target="_blank" ng-if="data.publicite" style="background-color:#387ef5;color:#fff;border:none;float:right;border-radius:2px;"> <a href="{{data.link}}" style="color:#fff; text-decoration:none;" target="_blank"> <i class="ion-pricetag"></i> {{data.prix}}€</a></button>
