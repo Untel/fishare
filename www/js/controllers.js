@@ -27,7 +27,9 @@ angular.module('starter.controllers', [])
       });
     }, 3000);
   }
-  $scope.doRefresh = doRefresh;
+  $scope.doRefresh = function(){
+    doRefresh();
+  }
 
 
 
