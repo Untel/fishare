@@ -34,18 +34,21 @@
 }
 
 .camera_flash_effect {
-  width: 110%;
-  height: 110%;
+  width: 120%;
+  height: 120%;
 
   background: white;
   animation-name: flash;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-iteration-count: 1;
 }
 
 @keyframes flash {
   0% {
     opacity: 0;
+  }
+  20% {
+    opacity: 0.1;
   }
   100% {
     opacity: 1;
@@ -59,7 +62,7 @@
   /*animation: move 2s;
   animation-iteration-count: 1;*/
   /*transform: translateX(275px);*/
-  animation: move 2s;
+  animation: move 1s;
   -webkit-animation-fill-mode: forwards;
 }
 @keyframes move {

@@ -6,20 +6,18 @@ navigation history that also transitions its views in and out.
 <ion-side-menus enable-menu-with-back-views="false">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
-      <!-- <ion-nav-back-button>
-      </ion-nav-back-button> -->
+      <ion-nav-back-button>
+      </ion-nav-back-button>
 
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
       </ion-nav-buttons>
-
-      <span class="actualisation">Dernière actualisation : il y a 3h</span>
-
       <ion-nav-buttons side="right">
+
         <div class="item-avatar">
           <img src="img/jack.gif" style="display:inline-block;margin-top:-15px;width:30px;">
-          <p style="font-size:15px;text-align:right; margin-right:15px;">Jack<br /> 1040 pts</p>
+          <p style="font-size:15px;text-align:right; margin-right:15px;">Jack<br /> 720 pts</p>
         </div>
       </ion-nav-buttons>
 
@@ -41,6 +39,7 @@ navigation history that also transitions its views in and out.
       <ion-nav-view name="tab-picture"></ion-nav-view>
     </ion-tab>
 
+  <ion-nav-view name="tab-chats"></ion-nav-view>
   </ion-nav-buttons>
 </ion-nav-bar>
 
@@ -56,16 +55,13 @@ navigation history that also transitions its views in and out.
   <ion-content>
     <ion-list>
       <ion-item menu-close href="#/app/search">
-        <i class="ion-alert-circled"></i> Réglementation
+        Réglementation
       </ion-item>
       <ion-item menu-close href="#/app/browse">
-        <i class="ion-arrow-graph-up-right"></i> Statistiques
+        Statistiques
       </ion-item>
       <ion-item menu-close href="#/app/playlists">
-        <i class="ion-trophy"></i> Challenge
-      </ion-item>
-      <ion-item menu-close href="#/app/playlists">
-        <i class="ion-power"></i> Déconnexion
+        Challenge
       </ion-item>
     </ion-list>
   </ion-content>
