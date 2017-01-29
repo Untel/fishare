@@ -42,7 +42,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AccountCtrl', function($scope, $http, $state) {
+.controller('AccountCtrl', function($scope, $http, $state, $location) {
   $scope.settings = {
     enableFriends: true
   };
@@ -51,14 +51,13 @@ angular.module('starter.controllers', [])
   $scope.prises = [];
 
   $scope.goPrise = function(id){
-    $state.go('/prise/'+id);
+    $location.path('/prise/'+id);
   };
 
   $http({
     method: 'GET',
     url: '../../journal.json'
   }).then(function(res){
-    console.log(res);
     $scope.nbMois = res.data.nbMois;
     $scope.principaux = res.data.principaux;
     $scope.prises = res.data.prises;
@@ -87,11 +86,10 @@ angular.module('starter.controllers', [])
 .controller('PriseCtrl', function($scope, $state,$location){
   console.log("d");
 })
-.controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast){
+.controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast, $http, $rootScope){
   $scope.data = {
     "prenom" : "Jack",
     "nom" : "Dupont",
-    "description" : "Journée incroyable ! Regardez ce magnifique poisson ;)",
     "date" : "15 Octobre 2017",
     "img_photo" : "img/peche1.jpg",
     "img_user": "img/jack.gif",
@@ -114,6 +112,7 @@ angular.module('starter.controllers', [])
       $mdDialog.show(confirm)
     }
     else{
+      console.log(value);
       $http({
         method: 'GET',
         url: '../../data.json'
@@ -123,6 +122,7 @@ angular.module('starter.controllers', [])
         data["id"] = id++;
         data["taille"] = parseInt(value.taille);
         data["poids"] = parseInt(value.poids);
+        data["description"] = value.description;
         $rootScope.datas.push(data);
 
         $mdToast.show(

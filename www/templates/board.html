@@ -1,10 +1,13 @@
 <ion-view md-theme="fishareTheme" view-title="Board" >
   <ion-content class="padding">
 
-    <img src="img/peche1.jpg" alt="appareil photo" width="50%" height="200px" style="display:block; margin-left:auto; margin-right:auto" >
+    <!-- <img src="img/peche1.jpg" alt="appareil photo" width="50%" height="200px" style="display:block; margin-left:auto; margin-right:auto" > -->
+    <img width="200px" height="200px" src="img/fish_picture.jpg" alt="" style="display:block; margin-left:auto; margin-right:auto">
     <form layout="column" name="addFish">
-      <p>Nom : {{data.nom}}</p>
-      <p>Description : {{data.description}}</p>
+      <md-input-container>
+        <label>Description</label>
+        <input type="text" ng-model="data.description" required>
+      </md-input-container>
       <md-input-container>
         <label>Poids (kg)</label>
         <input type="number" ng-model="data.poids" min="0" required>
