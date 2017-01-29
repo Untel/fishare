@@ -51,7 +51,7 @@
   </div>
   <h1>Vos dernières prises</h1>
   <div class="list">
-    <a class="item item-thumbnail-left" ng-repeat="prise in prises" ng-click="goPrise(prise.id)">
+    <a class="item item-thumbnail-left" ng-repeat="prise in prises" href="#/prise/{{prise.id}}">
       <img ng-src="img/{{prise.img}}">
       <h2>{{prise.type}} de {{prise.poids}} kilos <i class="ion-ribbon-b" style="color:gold;"></i> {{prise.pts}} pts</h2>
       <p>Le {{prise.date}} à {{prise.lieu}}</p>
