@@ -90,11 +90,12 @@ angular.module('starter.controllers', [])
   $scope.data = {
     "prenom" : "Jack",
     "nom" : "Dupont",
-    "date" : "15 Octobre 2017",
-    "img_photo" : "img/peche1.jpg",
+    "pts" : 30,
+    "date" : "29 Janvier 2017",
+    "img_photo" : "img/fish_picture.jpg",
     "img_user": "img/jack.gif",
-    "type" : "Maquereau",
-    "lieu": "Brennilis",
+    "type" : "Mulet",
+    "lieu": "Brest",
     "like": 0,
     "comment": []
   }
@@ -102,7 +103,7 @@ angular.module('starter.controllers', [])
   $scope.showModal = function(event, value){
     var id;
     $scope.datas = [];
-    if((!value.poids && !value.taille) || value.taille < 20){
+    if((!value.poids && !value.taille) || value.taille < 30){
       var confirm = $mdDialog.confirm()
       .title("Réglementation")
       .textContent("La taille de ce poisson n'est pas en accord avec la réglementation")
@@ -123,7 +124,7 @@ angular.module('starter.controllers', [])
         data["taille"] = parseInt(value.taille);
         data["poids"] = parseInt(value.poids);
         data["description"] = value.description;
-        $rootScope.datas.push(data);
+        $rootScope.datas.unshift(data);
 
         $mdToast.show(
           $mdToast.simple()
