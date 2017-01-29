@@ -22,7 +22,7 @@
         </p>
         <p>
           <md-icon ng-if="!data.publicite" md-svg-icon="thumb-up"></md-icon>
-          <a href="" ng-if="!data.publicite" class="subdued">{{data.like}} <i class="ion-thumbsup"></i> </a>
+          <a ng-click="likeIt(data.id)" ng-if="!data.publicite" class="subdued">{{data.like}} <i class="ion-thumbsup" ng-class=''></i> </a>
           <a ng-if="!data.publicite" ng-click="toggleComments(data.id)" class="subdued">{{data.comment.length}} <i class="ion-chatboxes"></i></a>
           <div ng-show="showComment == data.id">
             <div class="list" ng-repeat="comment in data.comment track by $index">
@@ -34,7 +34,7 @@
             </div>
           </div>
           <form ng-show="showComment == data.id" ng-submit="validerComment(data.id, toto)">
-            <label class="item item-input" ng-if="error_message != undefined">{{error_message}}</label><br />
+            <label style="color: red" class="item item-input" ng-if="error_message != undefined">{{error_message}}</label><br />
               <div class="row">
                 <div class="col">
                   <label class="item item-input">

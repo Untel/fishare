@@ -85,6 +85,10 @@
   margin-top: 20px;
 }
 
+.is-liked {
+  color: rgb(0, 188, 212);
+}
+
 .subtitle span {
   color: white;
 }

@@ -1,13 +1,11 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', ['JsonServ', function($scope, $http, JsonServ) {
-
   $scope.showComment = -1;
   $scope.error_message = undefined;
-  console.log(JsonServ);
+
   JsonServ.getData().then(function(res){
-    console.log(res);
-  })
+  });
 
   $scope.toggleComments = function(id){
     if($scope.showComment != id)
