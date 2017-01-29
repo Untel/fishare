@@ -130,9 +130,9 @@ angular.module('starter.controllers', [])
     // $location.path('/board');
     $state.go('board');
   }
+  console.log("Loaded");
 })
-.controller('BoardCtrl', function($scope, $state, $mdDialog){
-  $scope.showToolTip = false;
+.controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast){
   $scope.data = {
     'id' : 1,
     'prenom' : 'Jean Eude',
@@ -145,8 +145,7 @@ angular.module('starter.controllers', [])
 
   $scope.showModal = function(event){
     console.log($scope.data);
-    $scope.showToolTip = false;
-    if(!$scope.data.taille && !$scope.data.poids && $scope.data.taille <= 20 ){
+    if(!$scope.data.taille && $scope.data.poids && $scope.data.taille <= 20 ){
       var confirm = $mdDialog.confirm()
       .title("Réglementation")
       .textContent("La taille de ce poisson n'est pas en accord avec la réglementation")
@@ -156,7 +155,13 @@ angular.module('starter.controllers', [])
       $mdDialog.show(confirm)
     }
     else{
-      $scope.showToolTip = false;
+      $mdToast.show(
+        $mdToast.simple()
+          .textContent("Votre poisson à bien été ajouté")
+          .position("bottom")
+          .hideDelay(3000)
+      );
+      $state.go('tab.dash');
     }
   }
 })

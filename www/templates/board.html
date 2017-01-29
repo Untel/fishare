@@ -2,22 +2,19 @@
   <ion-content class="padding">
 
     <img src="img/peche1.jpg" alt="appareil photo" width="50%" height="200px" style="display:block; margin-left:auto; margin-right:auto" >
-    <form layout="column">
+    <form layout="column" name="addFish">
       <p>Nom : {{data.nom}}</p>
       <p>Description : {{data.description}}</p>
       <md-input-container>
-        <label>Poids</label>
-        <input type="number" ng-model="data.poids">
+        <label>Poids (kg)</label>
+        <input type="number" ng-model="data.poids" min="0" required>
       </md-input-container>
       <md-input-container>
-        <label>Taille</label>
-        <input type="number" ng-model="data.taille">
+        <label>Taille (cm)</label>
+        <input type="number" ng-model="data.taille" min="0" required>
       </md-input-container>
       <md-button class="md-primary" ng-click="showModal($event)" arial-label="Le poisson à bien été ajouté">
         Ajouter
-        <md-tooltip md-visible="showToolTip">
-          Le poisson à bien été ajouté
-        </md-tooltip>
       </md-button>
 
     </form>

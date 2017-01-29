@@ -1,6 +1,10 @@
 <ion-view md-theme="fishareTheme" view-title="Picture" >
   <ion-content class="padding">
-
-    <img src="img/snap.png" ng-click="goTo()" alt="appareil photo" width="90%" height="500px" style="display:block; margin-left:auto; margin-right:auto; cursor:pointer" >
+    <img class="camera" src="img/snap.png" ng-click="goTo()" alt="appareil photo" width="90%" height="500px" style="display:block; margin-left:auto; margin-right:auto; cursor:pointer" >
+    <div class="camera_flash_effect">
+      <img class="fakePicture" src="img/fish_picture.jpg" alt="">
+    </div>
+    <md-button ng-click="goTo()"class="md-primary goBtn md-fab">Go</md-button>
   </ion-content>
+  
 </ion-view>
