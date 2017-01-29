@@ -1,0 +1,41 @@
+[
+  {
+    "mer" :
+    [
+      {
+        "regions" :
+        [
+          {
+            "id" : 0,
+            "nom" : "BretagneOuest",
+            "poissons" :
+            [
+              {
+                "id" : 0,
+                "nom" : "Bar",
+                "complement"  : "",
+                "maille" : 42,
+                "quota" : 1,
+              },
+              {
+                "id" : 1,
+                "nom": "Lieu",
+                "complement" : "Jaune",
+                "maille" : 30
+              }
+            ]
+          }
+        ]
+      },
+    ],
+    "riviere" :
+    [
+      {
+        "regions" :
+        [
+          
+        ]
+      }
+    ],
+  }
+]
