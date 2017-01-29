@@ -67,7 +67,7 @@ angular.module('starter.controllers', [])
         'id' : id_comment,
         'author_prenom' : 'Jack',
         'author_nom' : 'Dupont',
-        'author_img' : 'img/jack.jpg',
+        'author_img' : 'img/jack.gif',
         'content' : value,
         'heure' : new Date()
       };
