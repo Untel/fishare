@@ -124,7 +124,7 @@ angular.module('starter.controllers', [])
     "prenom" : "Jack",
     "nom" : "Dupont",
     "pts" : 30,
-    "date" : "29 Janvier 2017",
+    "date" : "À l'instant",
     "img_photo" : "img/fish_picture.jpg",
     "img_user": "img/jack.gif",
     "type" : "Mulet",
