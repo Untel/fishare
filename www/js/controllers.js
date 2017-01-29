@@ -41,13 +41,17 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('AccountCtrl', function($scope, $http) {
+.controller('AccountCtrl', function($scope, $http, $state) {
   $scope.settings = {
     enableFriends: true
   };
   $scope.nbMois;
   $scope.principaux = [];
   $scope.prises = [];
+
+  $scope.goPrise = function(id){
+    $state.go('/prise/'+id);
+  };
 
   $http({
     method: 'GET',
@@ -79,6 +83,9 @@ angular.module('starter.controllers', [])
     $state.go('board');
   }
   console.log("Loaded");
+})
+.controller('PriseCtrl', function($scope, $state,$location){
+  console.log("d");
 })
 .controller('BoardCtrl', function($scope, $state, $mdDialog, $mdToast){
   $scope.data = {

@@ -37,7 +37,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       templateUrl: 'templates/auth.html',
       controller: 'AuthCtrl'
     })
-
   // setup an abstract state for the tabs directive
     .state('tab', {
       url: '/tab',
@@ -56,7 +55,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
-
   .state('tab.account', {
       url: '/account',
       views: {
@@ -65,6 +63,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
           controller: 'AccountCtrl'
         }
       }
+    })
+    .state('tab.prise', {
+      url: '/prise/:id',
+      templateUrl: 'templates/prise.html',
+      controller: 'PriseCtrl',
+      parent: "tab.account"
     })
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
