@@ -1,15 +1,18 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', ['JsonServ', function($scope, $http, JsonServ) {
+.controller('DashCtrl', function($scope, $http) {
   $scope.showComment = -1;
   $scope.error_message = undefined;
   scope.datas = [];
 
-  var init = function(){
-    JsonServ.getData().then(function(res){
+
+  $scope.datas = [];
+    $http({
+      method: 'GET',
+      url: '../../data.json'
+    }).then(function(res){
       $scope.datas = res.data;
     });
-  }
 
   $scope.toggleComments = function(id){
     if($scope.showComment != id)
@@ -38,9 +41,7 @@ angular.module('starter.controllers', [])
       $scope.toto = "";
     }
   }
-  
-  init();
-}])
+})
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
